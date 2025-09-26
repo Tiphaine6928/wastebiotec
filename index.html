@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waste-Bio-Tec - Site en construction</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
 </head>
 <body>
     <!-- Particules décoratives -->
@@ -16,7 +17,7 @@
     <div class="particle"></div>
     
     <div class="container">
-        <div class="logo">🌱 WASTE-BIO-TEC</div>
+        <div class="logo">WASTE-BIO-TEC</div>
         <div class="subtitle">Valorisation des déchets • Innovation écologique</div>
         
         <div class="main-message">
@@ -32,18 +33,19 @@
         </div>
         
         <p style="font-size: 1.1rem; margin-bottom: 1rem;">
-            <strong>Disponible dans quelques jours</strong>
+            <strong>Disponible dans quelques semaines</strong>
         </p>
         
         <div class="contact-info">
             <h3>En attendant, contactez-nous :</h3>
             <div class="contact-item">
                 <span class="icon">📧</span>
-                contact@waste-bio-tec.fr
+                contact@s-barou-group.com
+                marketing@s-barou-group.com
             </div>
             <div class="contact-item">
                 <span class="icon">📞</span>
-                +33 (0)1 23 45 67 89
+                07 88 08 59 15
             </div>
             <div class="contact-item">
                 <span class="icon">📍</span>
@@ -53,34 +55,9 @@
     </div>
     
     <div class="footer">
-        © 2024 Waste-Bio-Tec - Tous droits réservés
+        © 2025 Waste-Bio-Tec - Tous droits réservés
     </div>
     
-    <script>
-        // Animation douce au chargement
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.querySelector('.container');
-            container.style.opacity = '0';
-            container.style.transform = 'translateY(50px)';
-            
-            setTimeout(() => {
-                container.style.transition = 'all 1s ease-out';
-                container.style.opacity = '1';
-                container.style.transform = 'translateY(0)';
-            }, 100);
-        });
-        
-        // Effet de parallaxe léger sur les particules
-        document.addEventListener('mousemove', function(e) {
-            const particles = document.querySelectorAll('.particle');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            particles.forEach((particle, index) => {
-                const speed = (index + 1) * 0.5;
-                particle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-            });
-        });
-    </script>
+    
 </body>
 </html>
