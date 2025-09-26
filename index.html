@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste-Bio-Tec - Site en construction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particules décoratives -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+    <div class="container">
+        <div class="logo">🌱 WASTE-BIO-TEC</div>
+        <div class="subtitle">Valorisation des déchets • Innovation écologique</div>
+        
+        <div class="main-message">
+            Notre site web est en construction
+        </div>
+        
+        <div class="description">
+            Nous travaillons activement sur notre nouvelle plateforme pour mieux vous présenter nos solutions innovantes de valorisation des déchets. Notre site sera bientôt disponible avec toutes les informations sur nos services et technologies.
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+            <strong>Disponible dans quelques jours</strong>
+        </p>
+        
+        <div class="contact-info">
+            <h3>En attendant, contactez-nous :</h3>
+            <div class="contact-item">
+                <span class="icon">📧</span>
+                contact@waste-bio-tec.fr
+            </div>
+            <div class="contact-item">
+                <span class="icon">📞</span>
+                +33 (0)1 23 45 67 89
+            </div>
+            <div class="contact-item">
+                <span class="icon">📍</span>
+                France
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        © 2024 Waste-Bio-Tec - Tous droits réservés
+    </div>
+    
+    <script>
+        // Animation douce au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(50px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 1s ease-out';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+        
+        // Effet de parallaxe léger sur les particules
+        document.addEventListener('mousemove', function(e) {
+            const particles = document.querySelectorAll('.particle');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            particles.forEach((particle, index) => {
+                const speed = (index + 1) * 0.5;
+                particle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
