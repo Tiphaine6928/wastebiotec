@@ -1,0 +1,5 @@
+.hero
+background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+
+.hero::before
+background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px); 

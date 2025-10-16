@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1,6;
             color: var(--text-dark);
             overflow-x: hidden;
         }
@@ -89,63 +89,126 @@
         }
 
         /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            height: 90vh;
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--text-light);
-            position: relative;
-            overflow: hidden;
-        }
+.hero {
+    margin-top: 80px;
+    min-height: 50vh;
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 0;
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: moveBackground 20s linear infinite;
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBackground 20s linear infinite;
+}
 
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
+@keyframes moveBackground {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
 
-        .hero-content {
-            max-width: 1200px;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease-out;
-            line-height: 1.2;
-        }
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
 
-        .hero h1 em {
-            color: var(--light-green);
-            font-style: normal;
-        }
+.hero h1 {
+    font-size: 2.2rem;
+    margin: 30px 0 0 50px;
+    animation: fadeInUp 1s ease-out;
+    line-height: 1.4;
+}
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.hero h1 em {
+    color: var(--light-green);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.hero-image {
+    flex: 0 0 400px;
+    animation: fadeInRight 1s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-right: 150px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .hero-image img {
+        height: 250px;
+    }
+}
 
         /* Section commune */
         .section {
@@ -218,29 +281,114 @@
         }
 
         /* Valorisation Section */
-        .valorisation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .intro-text {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .valorisation-list {
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .valorisation-card {
             background: white;
-            padding: 2rem;
             border-radius: 15px;
+            overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            display: flex;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .valorisation-card:hover {
-            transform: translateY(-5px);
+            transform: translateX(10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .valorisation-card h3 {
+        .valorisation-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .valorisation-card:nth-child(even):hover {
+            transform: translateX(-10px);
+        }
+
+        .card-image {
+            flex: 0 0 250px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .valorisation-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-content h3 {
             color: var(--primary-green);
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-content h3 .emoji {
+            font-size: 1.8rem;
+        }
+
+        .card-content p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .valorisation-card,
+            .valorisation-card:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .valorisation-card:hover,
+            .valorisation-card:nth-child(even):hover {
+                transform: translateY(-5px);
+            }
+
+            .card-image {
+                flex: 0 0 auto;
+                width: 100%;
+                height: 180px;
+            }
+
+            .card-content {
+                padding: 1.5rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
         }
 
         /* Déchets Grid */
