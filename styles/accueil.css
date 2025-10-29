@@ -391,43 +391,50 @@
             }
         }
 
-        /* Déchets Grid */
-        .dechets-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+/* Déchets Grid */
+.dechets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
-        .dechet-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: all 0.3s;
-        }
+.dechet-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s;
+    overflow: hidden;
+}
 
-        .dechet-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
+.dechet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 
-        .dechet-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+/* Image */
+.dechet-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
 
-        .dechet-card h3 {
-            color: var(--primary-green);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
+/* Texte */
+.dechet-card h3 {
+    color: var(--primary-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
 
-        .dechet-card p {
-            color: var(--secondary-green);
-            font-weight: 600;
-        }
+.dechet-card p {
+    color: var(--secondary-green);
+    font-weight: 600;
+}
+
 
         /* Avantages Grid */
         .avantages-grid {
