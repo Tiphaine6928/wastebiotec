@@ -90,125 +90,129 @@
 
         /* Hero Section */
 .hero {
-    margin-top: 80px;
-    min-height: 50vh;
-    background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    position: relative;
-    overflow: hidden;
-    padding: 3rem 0;
+  margin-top: 80px;
+  min-height: 60vh;
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
 }
 
+/* effet de grille animé */
 .hero::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: moveBackground 20s linear infinite;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBackground 20s linear infinite;
 }
 
 @keyframes moveBackground {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
 }
 
+/* structure interne */
 .hero-content {
-    max-width: 1200px;
-    width: 100%;
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
+/* texte */
 .hero-text {
-    flex: 1;
-    text-align: left;
+  flex: 1 1 400px;
+  text-align: left;
+  padding: 1rem;
 }
 
 .hero h1 {
-    font-size: 2.2rem;
-    margin: 30px 0 0 50px;
-    animation: fadeInUp 1s ease-out;
-    line-height: 1.4;
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 2.8rem);
+  margin: 0;
+  animation: fadeInUp 1s ease-out;
+  line-height: 1.4;
 }
 
 .hero h1 em {
-    color: var(--light-green);
-    font-style: normal;
-    font-weight: 600;
+  color: var(--light-green);
+  font-style: normal;
+  font-weight: 600;
 }
 
+/* image */
 .hero-image {
-    flex: 0 0 400px;
-    animation: fadeInRight 1s ease-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    margin-right: 150px;
+  flex: 1 1 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInRight 1s ease-out;
+  margin: 0;
 }
 
 .hero-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
+/* animations */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-@media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    .hero-text {
-        text-align: center;
-    }
+  .hero-text {
+    text-align: center;
+  }
 
-    .hero h1 {
-        font-size: 1.3rem;
-    }
-
-    .hero-image {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-
-    .hero-image img {
-        height: 250px;
-    }
+  .hero-image img {
+    max-width: 320px;
+    border-radius: 25px;
+  }
 }
+
+@media (max-width: 500px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-image img {
+    width: 90%;
+    max-width: none;
+    border-radius: 20px;
+  }
+}
+
 
         /* Section commune */
         .section {
