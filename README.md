@@ -1,2 +1,2 @@
 Site Web de Waste-Bio-Tec
-Langages utilisés : HTML, CSS, JavaScript
+Langages utilisés : HTML, CSS
