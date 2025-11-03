@@ -737,6 +737,7 @@
 
 
 /* Section globale */
+/* Section globale */
 .engagements {
   max-width: 1200px;
   margin: 5rem auto;
@@ -756,10 +757,11 @@
   gap: 3rem;
   margin-bottom: 4rem;
   background: linear-gradient(135deg, #ffffff 0%, #f6fff7 100%);
-  border-radius: 20px;
+  border-radius: 25px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem; /* ajoute de l’air autour du contenu */
 }
 
 .engagement-item:hover {
@@ -775,7 +777,7 @@
 /* Texte */
 .engagement-text {
   flex: 1;
-  padding: 2.5rem;
+  padding: 1.5rem;
   text-align: left;
 }
 
@@ -794,33 +796,40 @@
 /* Image */
 .engagement-image {
   flex: 1;
-  min-height: 300px;
-  overflow: hidden;
+  padding: 0.5rem; /* espace entre l’image et la bordure */
 }
 
 .engagement-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  border-radius: 20px; /* coins arrondis de l’image */
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .engagement-item:hover .engagement-image img {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
   .engagement-item {
     flex-direction: column;
+    padding: 1rem;
   }
   .engagement-item.reverse {
     flex-direction: column;
   }
   .engagement-text {
-    padding: 2rem 1.5rem;
+    padding: 1rem;
+  }
+  .engagement-image {
+    padding: 0;
   }
 }
+
 
 
         /* Contact Section */
