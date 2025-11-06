@@ -1,1 +1,222 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --primary-green: #2d5f3f;
+            --secondary-green: #4a9d5f;
+            --light-green: #7bc96f;
+            --bg-light: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1,6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--secondary-green);
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-green);
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .burger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            display: block;
+        }
+
+        /* Responsive : menu burger sur mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* cache le menu normal */
+        position: absolute;
+        top: 60px; /* ajuster selon ton header */
+        right: 0;
+        background-color: white; /* ou une couleur qui convient */
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex; /* affiche le menu quand le burger est cliqué */
+    }
+
+    .burger {
+        display: flex; /* burger visible sur mobile */
+    }
+}
+
+        /* Logo dans le header */
+        .logo img {
+            height: 100px;          /* Taille harmonieuse pour un header fixe */
+            width: auto;           /* Conserve les proportions du logo */
+            object-fit: contain;   /* Évite les déformations */
+            transition: transform 0.3s ease;
+        }
+
+        /* Pour s’assurer que le logo est bien centré verticalement */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Section globale */
+.section {
+  padding: 4rem 2rem;
+  background-color: #f8faf8;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--primary-green);
+  margin-bottom: 1.5rem;
+  position: relative;
+  margin-top: 150px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--secondary-green);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+.text-content p {
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .two-column {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .image-container {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+
+  .product-image {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
